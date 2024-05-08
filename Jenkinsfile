@@ -43,5 +43,6 @@ pipeline {
             echo "Using AWS COdeDeploy to deploy the application to production...."
             echo "aws deploy create-deployment...."
               echo "application-name <SIT223_APPLICATION..>"
-    } 
+      } 
+    }
 }
