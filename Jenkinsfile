@@ -23,7 +23,7 @@ pipeline {
                     body: "Unit and Integration testing stage unsuccessful",
                     subject: "Unit and Integration testing: Unsuccessful",
                  
-                }
+                
             }
         }
         stage('Code Analysis') {
@@ -42,13 +42,13 @@ pipeline {
                      body: "Security Scan passed successfully",
                     subject: "Security scan successful",
              
-                }
+                
                 failure {
                           mail to: "tamir.uni1@gmail.com",
                      body: "Security scan unsuccessful",
                     subject: "Security scan unsuccessful",
              
-                }
+                
             }
         }
         stage('Deploy to staging') {
