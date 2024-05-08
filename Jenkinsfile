@@ -13,10 +13,18 @@ pipeline {
             }
             post {
                 success {
-                    mail body: unit and Integration testing stage successull"
-                    subject: "Unit and Integration testing: Success"
-                    to: "s222244344@deakin.edu.au",
-                        attachLog: true
+                    mail body: "Unit and Integration testing stage successful",
+                    subject: "Unit and Integration testing: Success",
+                    to: "S222244344@deakin.edu.au",
+                    attachLog: true
+                }
+                failure {
+                    mail body: "Unit and Integration testing stage unsuccessful",
+                    subject: "Unit and Integration testing: Unsuccessful",
+                    to: "S222244344@deakin.edu.au",
+                    attachLog: true
+                }
+            }
         }
         stage('Code Analysis') {
             steps {
@@ -24,14 +32,23 @@ pipeline {
                 echo "Analyzing code..."
             }
         }
-                failure {
-                    mail body: "Unit and Integration testing stage unsuccessful"
-                    subject: "Unit and Integration testing: unsuccessful"
-                    to: "s222244344@deakin.edu.au"
-                    attachLog: true
         stage('Security Scan') {
             steps {
                 echo "Running OWASP Dependency-Check to perform security scan..."
+            }
+            post {
+                success {
+                    mail body: "Security Scan passed successfully",
+                    subject: "Security scan successful",
+                    to: "S222244344@deakin.edu.au",
+                    attachLog: true
+                }
+                failure {
+                    mail body: "Security scan unsuccessful",
+                    subject: "Security scan unsuccessful",
+                    to: "S222244344@deakin.edu.au",
+                    attachLog: true
+                }
             }
         }
         stage('Deploy to staging') {
