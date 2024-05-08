@@ -15,12 +15,12 @@ pipeline {
                 success {
                     mail body: "Unit and Integration testing stage successful",
                     subject: "Unit and Integration testing: Success",
-                    to: "S222244344@deakin.edu.au"
+                    to: "tamir.uni1@gmail.com"
                 }
                 failure {
                     mail body: "Unit and Integration testing stage unsuccessful",
                     subject: "Unit and Integration testing: Unsuccessful",
-                    to: "S222244344@deakin.edu.au"
+                    to: "tamir.uni1@gmail.com"
                 }
             }
         }
@@ -38,12 +38,12 @@ pipeline {
                 success {
                     mail body: "Security Scan passed successfully",
                     subject: "Security scan successful",
-                    to: "S222244344@deakin.edu.au"
+                    to: "tamir.uni1@gmail.com"
                 }
                 failure {
                     mail body: "Security scan unsuccessful",
                     subject: "Security scan unsuccessful",
-                    to: "S222244344@deakin.edu.au"
+                    to: "tamir.uni1@gmail.com"
                 }
             }
         }
