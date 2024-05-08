@@ -13,17 +13,15 @@ pipeline {
             }
             post {
                 success {
-                     mail to: "tamir.uni1@gmail.com",
+                    mail to: "tamir.uni1@gmail.com",
                     subject: "Unit and Integration testing: Success",
-                     body: "Unit and Integration testing stage successful",
-                   
-
+                    body: "Unit and Integration testing stage successful"
+                }
                 failure {
-                      mail to: "tamir.uni1@gmail.com",
+                    mail to: "tamir.uni1@gmail.com",
                     body: "Unit and Integration testing stage unsuccessful",
-                    subject: "Unit and Integration testing: Unsuccessful",
-                 
-                
+                    subject: "Unit and Integration testing: Unsuccessful"
+                }
             }
         }
         stage('Code Analysis') {
@@ -38,17 +36,15 @@ pipeline {
             }
             post {
                 success {
-                           mail to: "tamir.uni1@gmail.com",
-                     body: "Security Scan passed successfully",
-                    subject: "Security scan successful",
-             
-                
+                    mail to: "tamir.uni1@gmail.com",
+                    body: "Security Scan passed successfully",
+                    subject: "Security scan successful"
+                }
                 failure {
-                          mail to: "tamir.uni1@gmail.com",
-                     body: "Security scan unsuccessful",
-                    subject: "Security scan unsuccessful",
-             
-                
+                    mail to: "tamir.uni1@gmail.com",
+                    body: "Security scan unsuccessful",
+                    subject: "Security scan unsuccessful"
+                }
             }
         }
         stage('Deploy to staging') {
