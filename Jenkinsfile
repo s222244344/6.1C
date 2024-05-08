@@ -15,9 +15,9 @@ pipeline {
                 success {
                     mail body: "Unit and Integration testing stage successful",
                     subject: "Unit and Integration testing: Success",
-                    to: "S222244344@deakin.edu.au",
-                 
+                    to: "S222244344@deakin.edu.au", 
                 }
+            }
                 failure {
                     mail body: "Unit and Integration testing stage unsuccessful",
                     subject: "Unit and Integration testing: Unsuccessful",
