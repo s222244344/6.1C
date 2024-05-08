@@ -2,7 +2,6 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-        }
             steps {
                 echo "Using Maven to automatically compile and package code..."
             }
