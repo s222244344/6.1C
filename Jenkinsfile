@@ -13,14 +13,17 @@ pipeline {
             }
             post {
                 success {
-                    mail body: "Unit and Integration testing stage successful",
+                     mail to: "tamir.uni1@gmail.com",
                     subject: "Unit and Integration testing: Success",
-                    to: "tamir.uni1@gmail.com"
+                     body: "Unit and Integration testing stage successful",
+                   
+                  
                 }
                 failure {
-                    mail body: "Unit and Integration testing stage unsuccessful",
+                      mail to: "tamir.uni1@gmail.com"
+                    body: "Unit and Integration testing stage unsuccessful",
                     subject: "Unit and Integration testing: Unsuccessful",
-                    to: "tamir.uni1@gmail.com"
+                 
                 }
             }
         }
@@ -36,14 +39,16 @@ pipeline {
             }
             post {
                 success {
-                    mail body: "Security Scan passed successfully",
+                           mail to: "tamir.uni1@gmail.com"
+                     body: "Security Scan passed successfully",
                     subject: "Security scan successful",
-                    to: "tamir.uni1@gmail.com"
+             
                 }
                 failure {
-                    mail body: "Security scan unsuccessful",
+                          mail to: "tamir.uni1@gmail.com"
+                     body: "Security scan unsuccessful",
                     subject: "Security scan unsuccessful",
-                    to: "tamir.uni1@gmail.com"
+             
                 }
             }
         }
