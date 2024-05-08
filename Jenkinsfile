@@ -17,8 +17,7 @@ pipeline {
                     subject: "Unit and Integration testing: Success",
                      body: "Unit and Integration testing stage successful",
                    
-                  
-                }
+
                 failure {
                       mail to: "tamir.uni1@gmail.com",
                     body: "Unit and Integration testing stage unsuccessful",
