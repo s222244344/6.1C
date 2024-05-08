@@ -11,6 +11,12 @@ pipeline {
                 echo "Running unit testing using JUnit..."
                 echo "Running integration tests using Selenium..."
             }
+            post {
+                success {
+                    mail body: unit and Integration testing stage successull"
+                    subject: "Unit and Integration testing: Success"
+                    to: "s222244344@deakin.edu.au",
+                        attachLog: true
         }
         stage('Code Analysis') {
             steps {
@@ -18,6 +24,11 @@ pipeline {
                 echo "Analyzing code..."
             }
         }
+                failure {
+                    mail body: "Unit and Integration testing stage unsuccessful"
+                    subject: "Unit and Integration testing: unsuccessful"
+                    to: "s222244344@deakin.edu.au"
+                    attachLog: true
         stage('Security Scan') {
             steps {
                 echo "Running OWASP Dependency-Check to perform security scan..."
